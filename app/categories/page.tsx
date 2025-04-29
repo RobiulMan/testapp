@@ -1,3 +1,4 @@
+"use server"
 import { fetchDataFromStrapi, fetchPaginatedProducts } from "@/lib/api";
 import ProductCard from "../ProductCard";
 import { Product } from "@/types/typeProduct";
