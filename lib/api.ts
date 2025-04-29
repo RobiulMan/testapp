@@ -118,6 +118,7 @@ export const fetchPaginatedProducts = async (
   };
 
   const apiUrl = `${STRAPI_API_URL}/api/products${query}`;
+  console.log("Authorization: => ",`Bearer ${STRAPI_API_TOKEN}`,)
   console.log("fetchPaginatedProducts function apiUrl =>", apiUrl);
   try {
     const response = await fetch(apiUrl, fetchOption);
