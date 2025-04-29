@@ -1,0 +1,20 @@
+version: "3"
+services:
+  frontend:
+    container_name: testapp
+    image: robiul692/testapp:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - NEXT_PUBLIC_STRAPI_API_URL=${NEXT_PUBLIC_STRAPI_API_URL}
+        - NEXT_PUBLIC_STRAPI_API_TOKEN=${NEXT_PUBLIC_STRAPI_API_TOKEN}
+    restart: unless-stopped
+    environment:
+      - NEXT_PUBLIC_STRAPI_API_URL=${NEXT_PUBLIC_STRAPI_API_URL}
+      - NEXT_PUBLIC_STRAPI_API_TOKEN=${NEXT_PUBLIC_STRAPI_API_TOKEN}
+    env_file:
+      - .env
+    ports:
+      - "3030:3030"
+
